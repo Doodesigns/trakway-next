@@ -106,9 +106,10 @@ export type Product = {
 
 // This file simulates a database table. In a real app, swap this module
 // for a Prisma/Drizzle query, a CMS client (Sanity, Contentful), or a call
-// to an external commerce platform (Shopify, Medusa, etc). Nothing outside
-// `app/api/**` should import from this file directly — everything else
-// goes through the REST endpoints in app/api/products/*.
+// to an external commerce platform (Shopify, Medusa, etc). Both lib/api.ts
+// (used by Server Components) and app/api/products/* (the REST endpoints for
+// external clients) import from here directly — Server Components no longer
+// go through the REST layer for their own data; see lib/api.ts for why.
 export const products: Product[] = [
   {
     id: 'Trakway-TW-05-GPS',
