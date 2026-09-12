@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind v4 is CSS-first: design tokens live here instead of in
+ * tailwind.config.js. This replaces the old `theme.extend.colors.brand`
+ * block. Content (class) detection is automatic — no `content` array needed.
+ */
+@theme {
+  --color-brand-50: oklch(0.98 0.02 55);
+  --color-brand-100: oklch(0.95 0.05 55);
+  --color-brand-500: oklch(0.65 0.19 45);
+  --color-brand-600: #FA801D;
+  --color-brand-700: oklch(0.5 0.17 35);
+  --color-brand-1200: #F86134;
+
+  --color-ink-600: #17534d;
+  --color-ink-700: #12433f;
+  --color-ink-800: #0d332f;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.bg-gray-bread {
+  background: #fff1e5;
+}
+
+.text-gray-900 {
+  color: #474747;
+}
