@@ -118,7 +118,7 @@ export default async function ProductDetailsPage({
         
       </div>
     </div>
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10">
+    <div className="mx-auto lg:max-w-7xl px-4 py-8 sm:py-10">
     <ProductTabs
           tabs={[
             {

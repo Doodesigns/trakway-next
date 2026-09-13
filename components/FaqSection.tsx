@@ -14,7 +14,7 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="py-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto lg:max-w-7xl px-4">
 
      
       <div className="grid gap-10 md:grid-cols-2">
@@ -34,7 +34,7 @@ export default function FaqSection() {
                   aria-expanded={isOpen}
                   className="flex w-full items-start justify-between gap-4 text-left"
                 >
-                  <span className="font-bold text-gray-900 text-2xl">{item.question}</span>
+                  <span className="font-bold text-gray-900 md:text-2xl text-xl">{item.question}</span>
                   <span className="mt-0.5 shrink-0 text-xl leading-none text-brand-600">
                     {isOpen ? '−' : '+'}
                   </span>

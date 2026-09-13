@@ -40,13 +40,13 @@ export default async function ProductCategoryPage({
   return (
     <div className="">
       <div className="bg-gray-bread mb-12 text-start py-6">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto lg:max-w-7xl px-4">
           <h1 className="mb-0 text-2xl font-bold text-gray-900 text-white sm:text-3xl md:text-4xl">
             {category.name}
           </h1>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto lg:max-w-7xl px-4">
         <ProductCatalog
           products={products}
           activeSlug={category.slug}

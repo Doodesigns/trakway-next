@@ -22,8 +22,8 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-16">
-      <div className="mx-auto max-w-7xl">
+    <section id="testimonials" className="pt-16 md:py-16">
+      <div className="mx-auto lg:max-w-7xl px-4">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className="text-sm font-semibold text-brand-600">{t("label")}</p>

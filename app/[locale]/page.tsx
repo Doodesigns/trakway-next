@@ -22,14 +22,14 @@ export default async function HomePage({
     <div>
       {/* Hero */}
       <section
-        className="relative left-1/2 right-1/2 -mx-[50vw] mb-12 w-screen bg-cover bg-center py-16 text-center"
+        className="relative left-1/2 right-1/2 -mx-[50vw] mb-12 w-screen bg-cover bg-center md:py-16 pb-0 text-center"
         style={{ backgroundImage: "url('/images/banner-bg.png')" }}
       >
-        <h1 className="text-6xl font-extrabold text-gray-900 sm:text-5xl">
+        <h1 className="text-4xl font-extrabold text-gray-900 lg:text-6xl">
           <span className="block">{t('heroTitleLine1')}</span>
           <span className="block">{t('heroTitleLine2')}</span>
         </h1>
-        <p className="mx-auto mt-3 text-gray-900 sm:text-10xl">
+        <p className="mx-auto mt-3 text-gray-900 sm:text-lg">
           {t('heroSubtitlePart1')}
           <span className="text-brand-600">{t('heroSubtitlePart2')}</span>
           {t('heroSubtitlePart3')}
@@ -45,7 +45,7 @@ export default async function HomePage({
       {/* Featured products — fetched from GET /api/products?featured=true */}
       <section>
         <div className="mb-10 text-center">
-          <h2 className="text-6xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-gray-900 md:text-5xl">
             {t('productsHeadingPart1')}
             <span className="text-brand-600">{t('productsHeadingPart2')}</span>
           </h2>
@@ -54,8 +54,8 @@ export default async function HomePage({
             <span className="block">{t('productsSubtitleLine2')}</span>
           </p>
         </div>
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        <div className="mx-auto lg:max-w-7xl px-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

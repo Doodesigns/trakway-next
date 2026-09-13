@@ -71,8 +71,8 @@ export default function Footer() {
       </div>
 
       <div className="bg-[#323333] pt-32 pb-10 text-gray-300">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="flex flex-wrap items-center justify-between gap-6 pb-6">
+        <div className="mx-auto lg:max-w-7xl px-4">
+          <div className="flex flex-wrap items-center justify-between gap-6 pb-6 flex-col md:flex-row">
             <Image
               src="/images/trakway-technologies.png"
               alt="Trak Way Technologies"
@@ -82,18 +82,18 @@ export default function Footer() {
             />
 
             <div>
-              <p className="text-sm font-semibold text-white">{t('locationLabel')}</p>
+              <p className="font-600 text-white text-2xl">{t('locationLabel')}</p>
               <p className="text-sm text-white">{t('locationValue')}</p>
             </div>
 
             <div>
-              <p className="text-sm font-semibold text-white">{t('emailLabel')}</p>
+              <p className="font-600 text-white text-2xl">{t('emailLabel')}</p>
               <p className="text-sm text-white">{t('emailValue')}</p>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-10">
-            <div className="grid gap-10 sm:grid-cols-3">
+            <div className="grid gap-10 md:grid-cols-3 text-center md:text-start">
               <div>
                 <h3 className="font-600 text-white text-2xl mb-4">{t('openingHoursHeading')}</h3>
                 <p className="mt-3 text-md text-white">{t('openingHoursLine1')}</p>
@@ -122,8 +122,10 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 pt-12 text-md text-gray-400">
-            <p>{t('copyrightText', { year: new Date().getFullYear() })}</p>
+          <div className="mt-10 flex flex-col items-center justify-between gap-4 md:pt-12 text-center text-gray-400 md:flex-row md:text-start">
+            <p className="block">
+              {t('copyrightText', { year: new Date().getFullYear() })}
+            </p>
             <p>
               <Link href="#" className="hover:text-white">
                 {t('privacyPolicy')}

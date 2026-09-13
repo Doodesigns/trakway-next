@@ -29,7 +29,7 @@ export default function ProductCard({ product }: { product: ApiProduct }) {
           className="object-contain border border-gray-200"
         />
       </div>
-      <h3 className="mt-4 line-clamp-2 font-bold text-gray-900 text-2xl sm:text-2xl">{product.name}</h3>
+      <h3 className="mt-4 line-clamp-2 font-bold text-gray-900 text-xl md:text-2xl">{product.name}</h3>
       <p className="mt-2 line-clamp-2 text-sm text-gray-500">{product.shortDescription}</p>
       <Link
         href={`/product/${product.id}`}

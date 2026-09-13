@@ -8,7 +8,7 @@ export default function ServicesSection() {
     <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen mt-12" style={{ backgroundImage: "url('./images/services-bg.jpg')" }}>
       
         <div className="mb-10 text-center">
-          <h2 className="text-6xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-gray-900 md:text-5xl">
            Our
             <span className="text-brand-600 ms-4">Services</span>
           </h2>

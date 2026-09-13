@@ -135,7 +135,7 @@ export const products: Product[] = [
       hi: 'हस्तनिर्मित मिट्टी का मग'
     },
     description: {
-      en: 'TW-05 GPS tracker is a compact and efficient device designed for reliable location tracking in real time. Utilizing 2G connectivity, it offers essential tracking features suitable for personal vehicles and assets. With its user-friendly interface and simple installation, the V5 provides accurate positioning, geofencing capabilities, and historical logs for no network area. Ideal for those seeking an economical solution for monitoring their belongings, the TW-05  GPS tracker ensures you stay connected and informed at all times.Secure, monitor, and manage your vehicle with the Trakway Advanced GPS Tracking Device.',
+      en: 'TW-05 GPS tracker is a compact and efficient device designed for reliable location tracking in real time. Utilizing 2G connectivity, it offers essential tracking features suitable for personal vehicles and assets. With its user-friendly interface and simple installation, the TW-05 provides accurate positioning, geofencing capabilities, and historical logs for no network area. Ideal for those seeking an economical solution for monitoring their belongings, the TW-05  GPS tracker ensures you stay connected and informed at all times.Secure, monitor, and manage your vehicle with the Trakway Advanced GPS Tracking Device.',
       ta: 'கையால் வடிவமைக்கப்பட்ட மட்பாண்ட கோப்பை. ஒவ்வொன்றும் தனித்துவமான வடிவமைப்புடன் இருக்கும்.',
       hi: 'हाथ से बना मिट्टी का मग। हर टुकड़ा अपने अनोखे ग्लेज़ पैटर्न के साथ अद्वितीय है।'
     },

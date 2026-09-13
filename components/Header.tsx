@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -6,11 +9,12 @@ import LocaleSwitcher from './LocaleSwitcher';
 export default function Header() {
   const nav = useTranslations('Nav');
   const services = useTranslations('Services');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-white">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-4 py-4">
-        <Link href="/" className="shrink-0">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4">
+        <Link href="/" className="shrink-0" onClick={() => setIsMenuOpen(false)}>
           <Image
             src="/images/trakway-technologies.png"
             alt="Trak Way Technologies"
@@ -21,14 +25,14 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="flex flex-wrap items-center gap-8 text-[15px] font-medium text-gray-700">
+        <nav className="hidden flex-wrap items-center gap-8 text-[15px] font-medium text-gray-700 lg:flex">
           <Link href="/" className="hover:text-ink-700">
            Home
           </Link>
           <Link href="/products" className="hover:text-ink-700">
             {nav('products')}
           </Link>
-         
+
           <div className="group relative">
             <Link href="/#vehicle-tracking" className="inline-flex items-center gap-1 hover:text-ink-700">
               {nav('services')}
@@ -69,7 +73,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-5">
+        <div className="hidden items-center gap-5 lg:flex">
           {/* <LocaleSwitcher />
 
           <button type="button" aria-label="Account" className="text-gray-500 hover:text-ink-700">
@@ -96,7 +100,81 @@ export default function Header() {
             Book A Demo
           </Link>
         </div>
+
+        <button
+          type="button"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((open) => !open)}
+          className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 lg:hidden"
+        >
+          {isMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
       </div>
+
+      {isMenuOpen && (
+        <nav className="flex flex-col gap-1 border-t border-gray-100 px-4 py-4 text-[15px] font-medium text-gray-700 lg:hidden">
+          <Link href="/" className="rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link
+            href="/products"
+            className="rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {nav('products')}
+          </Link>
+
+          <span className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+            {nav('services')}
+          </span>
+          <Link
+            href="/#vehicle-tracking"
+            className="rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {services('vehicleHeading')}
+          </Link>
+          <Link
+            href="/#personal-tracking"
+            className="rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {services('personalHeading')}
+          </Link>
+
+          <Link
+            href="/about"
+            className="mt-2 rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {nav('about')}
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-md px-3 py-2 hover:bg-gray-50 hover:text-ink-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {nav('contact')}
+          </Link>
+
+          <Link
+            href="/contact"
+            className="mt-3 rounded-md bg-ink-700 px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-ink-800"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Book A Demo
+          </Link>
+        </nav>
+      )}
     </header>
   );
 }
